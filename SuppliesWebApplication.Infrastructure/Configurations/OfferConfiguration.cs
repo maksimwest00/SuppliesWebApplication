@@ -23,7 +23,7 @@ namespace SuppliesWebApplication.Infrastructure.Configurations
                 .HasMaxLength(Constants.MAX_LOW_TEXT_LENGTH)
                 .HasColumnName("model");
 
-            builder.HasOne(o => o.Provider);
+            builder.HasOne(o => o.Supplier);
 
             builder.Property(o => o.DateRegistration)
                    .IsRequired();

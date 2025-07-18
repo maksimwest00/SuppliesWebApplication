@@ -7,11 +7,11 @@
         {
         }
 
-        public int Id { get; private set; }
+        public int Id { get; set; }
 
-        public string? Name { get; private set; }
+        public string? Name { get; set; }
 
-        public DateTime DateCreate { get; private set; }
+        public DateTime DateCreate { get; set; }
 
         public Supplier(string? name,
                         DateTime dateCreate)

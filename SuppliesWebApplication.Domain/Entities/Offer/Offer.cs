@@ -1,4 +1,7 @@
-﻿namespace SuppliesWebApplication.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
+
+namespace SuppliesWebApplication.Domain.Entities
 {
     public class Offer
     {
@@ -8,30 +11,41 @@
 
         }
 
-        public int Id { get; private set; }
+        public int Id { get; set; }
 
-        public string? Stamp { get; private set; }
+        public string? Stamp { get; set; }
 
-        public string? Model { get; private set; }
+        public string? Model { get; set; }
 
-        public Supplier Provider { get; private set; } = default!;
+        [JsonIgnore]
+        [ForeignKey("Supplier")]
+        public int SupplierId { get; set; }
 
-        public DateTime DateRegistration { get; private set; }
+        public Supplier? Supplier { get; set; }
+
+        public DateTime DateRegistration { get; set; }
 
         public Offer(
             string? stamp,
             string? model,
-            DateTime dateRegistration)
+            DateTime dateRegistration,
+            Supplier? supplier = null)
         {
-            
+            Stamp = stamp;
+            Model = model;
+            Supplier = supplier;
+            DateRegistration = dateRegistration;
         }
 
         public static Offer Create(
             string? stamp,
             string? model,
-            DateTime dateRegistration)
+            Supplier? supplier)
         {
-            return new Offer(stamp, model, dateRegistration);
+            return new Offer(stamp,
+                             model,
+                             DateTime.Now,
+                             supplier);
         }
     }
 }
