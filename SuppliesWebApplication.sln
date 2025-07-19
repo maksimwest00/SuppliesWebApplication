@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuppliesWebApplication.Doma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuppliesWebApplication.Infrastructure", "SuppliesWebApplication.Infrastructure\SuppliesWebApplication.Infrastructure.csproj", "{83A35DE8-7A53-4BB5-9806-E85A26EFD496}"
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "supplieswebapplication.client.react", "SuppliesWebApplication.Client.React\supplieswebapplication.client.react.esproj", "{59D2A7BF-A284-FE6F-245D-C6ADCA1100D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,12 @@ Global
 		{83A35DE8-7A53-4BB5-9806-E85A26EFD496}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83A35DE8-7A53-4BB5-9806-E85A26EFD496}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83A35DE8-7A53-4BB5-9806-E85A26EFD496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59D2A7BF-A284-FE6F-245D-C6ADCA1100D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D2A7BF-A284-FE6F-245D-C6ADCA1100D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59D2A7BF-A284-FE6F-245D-C6ADCA1100D7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{59D2A7BF-A284-FE6F-245D-C6ADCA1100D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59D2A7BF-A284-FE6F-245D-C6ADCA1100D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59D2A7BF-A284-FE6F-245D-C6ADCA1100D7}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

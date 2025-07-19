@@ -23,15 +23,24 @@ namespace SuppliesWebApplication.Infrastructure.Repositories
         }
 
         public async Task<List<Offer>> Find(
-            FindOffersRequest supplierDto,
+            FindOffersRequest request,
             CancellationToken cancellationToken = default)
         {
+            if (request.Stamp is null &&
+                request.Model is null &&
+                request.SupplierId is null)
+            {
+                return await _dbContext.Offers
+                    .Include(x => x.Supplier)
+                    .ToListAsync(cancellationToken);
+            }
+
             return await _dbContext.Offers
-                .Where(x => x.Stamp == supplierDto.Stamp &&
-                            x.Model == supplierDto.Model &&
-                            x.SupplierId == supplierDto.SupplierId)
+                .Where(x => x.Stamp == request.Stamp &&
+                            x.Model == request.Model &&
+                            x.SupplierId == request.SupplierId)
                 .Include(x => x.Supplier)
-                .ToListAsync();
+                .ToListAsync(cancellationToken);
         }
 
         public async Task<List<MostPopularSuppliersResponse>> MostPopularSuppliers(

@@ -10,9 +10,7 @@ namespace SuppliesWebApplication.Application.Offers
             CancellationToken cancellationToken = default)
         {
             var offers = await offersRepository.Find(
-                new FindOffersRequest(request.Stamp,
-                                      request.Model,
-                                      request.SupplierId),
+                request,
                 cancellationToken);
 
             if (offers.Count is 0)

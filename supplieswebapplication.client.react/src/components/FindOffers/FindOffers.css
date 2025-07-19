@@ -1,0 +1,15 @@
+.mainBox {
+    display: flex;
+    flex-direction: row;
+}
+
+.childBox {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 8px;
+    min-height: 190px;
+}

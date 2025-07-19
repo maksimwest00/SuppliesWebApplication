@@ -12,6 +12,7 @@ builder.Services.AddApplication();
 
 var app = builder.Build();
 
+app.UseCors(builder => builder.AllowAnyOrigin());
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

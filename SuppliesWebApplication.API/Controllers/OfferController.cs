@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SuppliesWebApplication.Application.Offers;
+using SuppliesWebApplication.Domain.Entities;
 
 namespace SuppliesWebApplication.API.Controllers
 {
@@ -15,7 +16,7 @@ namespace SuppliesWebApplication.API.Controllers
         }
 
         [HttpPost("createoffer")]
-        public async Task<IActionResult> CreateOffer(
+        public async Task<ActionResult<string>> CreateOffer(
             [FromServices] CreateOfferHandler handler,
             [FromBody] CreateOfferRequest request,
             CancellationToken cancellationToken = default)
@@ -29,7 +30,7 @@ namespace SuppliesWebApplication.API.Controllers
         }
 
         [HttpGet("findoffers")]
-        public async Task<IActionResult> FindOffers(
+        public async Task<ActionResult<IReadOnlyList<Offer>>> FindOffers(
             [FromServices] FindOffersHandler handler,
             [FromQuery] FindOffersRequest request,
             CancellationToken cancellationToken = default)
@@ -43,7 +44,7 @@ namespace SuppliesWebApplication.API.Controllers
         }
 
         [HttpGet("mostpopularsuppliers")]
-        public async Task<IActionResult> MostPopularSuppliers(
+        public async Task<ActionResult<IReadOnlyList<MostPopularSuppliersResponse>>> MostPopularSuppliers(
             [FromServices] MostPopularSuppliersHandler handler,
             CancellationToken cancellationToken = default)
         {
